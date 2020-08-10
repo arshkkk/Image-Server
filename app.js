@@ -42,7 +42,7 @@ upload= multer({ storage:storage,fileFilter:imageFileFilter})
  res.json(req.file)
  })
  
- app.get('/arsh',(req,res,next)=>{
+ app.get('/',(req,res,next)=>{
      res.send('arsh')
  })
 
