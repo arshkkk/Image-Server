@@ -3,6 +3,7 @@ var path = require('path');
 var logger = require('morgan');
 var multer= require('multer');
 const {v4 : uuidV4 } = require('uuid')
+const cors = require('cors')
 
 
 
@@ -12,7 +13,9 @@ var app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors)
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 var storage=multer.diskStorage({
     destination:(req,file,cb)=>{
